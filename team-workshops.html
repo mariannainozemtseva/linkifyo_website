@@ -110,7 +110,7 @@ p{margin:0}
 .hero{display:grid; grid-template-columns:1fr auto; gap:clamp(28px,5vw,64px); align-items:center}
 .hero > *{min-width:0}
 .hero img.me{width:min(280px,64vw); aspect-ratio:1; border-radius:50%; object-fit:cover}
-@media (max-width:760px){.hero{grid-template-columns:1fr}.hero img.me{width:min(200px,52vw); order:-1}}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.hero img.me{width:min(200px,52vw); order:-1}.hero br.d{display:none}}
 .hero h1{max-width:16ch}
 
 /* filter */
@@ -205,7 +205,16 @@ footer a:hover{border-bottom:1px solid var(--accent)}
 footer a:hover{border-bottom:0}
 .qw .n a,.who .n a{text-decoration-color:var(--muted)}
 .qw .n a:hover,.who .n a:hover{text-decoration-color:var(--accent)}
-.nav-links a[aria-current="page"]{color:var(--accent); text-decoration:none}
+.nav-links a{color:var(--accent)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a[aria-current="page"]{color:var(--muted); text-decoration:none}
+/* inner page hero: same on all service pages */
+.hero{display:grid; grid-template-columns:minmax(0,max-content) auto; justify-content:start; column-gap:clamp(48px,7vw,96px); row-gap:28px; align-items:center; padding-block:clamp(52px,8vw,104px) clamp(44px,6vw,76px)}
+.hero > *{min-width:0}
+.hero h1{font-size:clamp(2.7rem,6.8vw,4.6rem); max-width:none}
+.hero .stack > :not(h1):not(.eyebrow){contain:inline-size; align-self:stretch}
+.hero img.me{width:min(280px,64vw); height:auto; aspect-ratio:1; border-radius:50%; object-fit:cover}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.hero img.me{width:min(200px,52vw); order:-1}.hero br.d{display:none}}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -252,7 +261,7 @@ if(!window.__needConsent&&!window.__denied)window.__loadGA();
 <section><div class="wrap hero">
   <div class="stack">
     <p class="eyebrow">Public Talks & Workshops</p>
-    <h1>Workshops for teams and communities</h1>
+    <h1>Workshops for teams <br class="d">and communities</h1>
     <p class="lede-xl">Guest sessions for private communities, talks at conferences, webinars, LinkedIn profile roasts. <b>People leave with a clear grasp of the fundamentals and a practical plan for growth.</b></p>
   </div>
   <img class="me" src="images/marianna-inozemtseva.jpg" alt="Marianna Inozemtseva" width="300" height="300">
