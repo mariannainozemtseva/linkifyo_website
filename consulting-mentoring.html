@@ -229,12 +229,13 @@ h1 em,h2 em{font-style:italic; font-weight:500; color:var(--accent)}
 .note{padding-block:18px 0; font-size:.95rem; color:var(--muted); border-top:1px solid var(--rule)}
 .more{padding-block:26px 0; border-top:1px solid var(--rule)}
 .more .btn{font-family:inherit; cursor:pointer}
-/* all text links underlined */
-.nav-links a,.go,footer a,.qw .n a,.t .qw .n a{text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.22em}
+/* links: underlined site-wide; current page in menu is accent, no underline */
+.nav-links a,.go,footer a,.qw .n a,.who .n a{text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.22em}
 .go{border-bottom:0 !important}
 footer a:hover{border-bottom:0}
-.qw .n a{text-decoration-color:var(--muted)}
-.qw .n a:hover{text-decoration-color:var(--accent)}
+.qw .n a,.who .n a{text-decoration-color:var(--muted)}
+.qw .n a:hover,.who .n a:hover{text-decoration-color:var(--accent)}
+.nav-links a[aria-current="page"]{color:var(--accent); text-decoration:none}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -273,7 +274,7 @@ if(!window.__needConsent&&!window.__denied)window.__loadGA();
   <nav class="nav-links">
     <a href="done-for-you-linkedin-growth">Done-for-you LinkedIn Growth</a>
     <a href="team-workshops">Workshops & Public Talks</a>
-    <a href="consulting-mentoring" aria-current="page" style="color:var(--ink)">1:1 Consulting &amp; Mentoring</a>
+    <a href="consulting-mentoring" aria-current="page">1:1 Consulting &amp; Mentoring</a>
   </nav>
 </div></header>
 <main>

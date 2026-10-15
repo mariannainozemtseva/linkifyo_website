@@ -167,6 +167,13 @@ footer a{color:var(--accent); text-decoration:none; font-weight:700}
 footer a:hover{border-bottom:1px solid var(--accent)}
 @media (max-width:560px){.rw .mt{margin-left:0; width:100%; text-align:left}}
 @media (prefers-reduced-motion:reduce){*{transition:none !important}}
+/* links: underlined site-wide; current page in menu is accent, no underline */
+.nav-links a,.go,footer a,.qw .n a,.who .n a{text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.22em}
+.go{border-bottom:0 !important}
+footer a:hover{border-bottom:0}
+.qw .n a,.who .n a{text-decoration-color:var(--muted)}
+.qw .n a:hover,.who .n a:hover{text-decoration-color:var(--accent)}
+.nav-links a[aria-current="page"]{color:var(--accent); text-decoration:none}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
