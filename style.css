@@ -278,7 +278,7 @@ a.press__t:hover{background:var(--yellow)}
 }
 
 /* signature under the hero subheading, footer note */
-.hero__sign{white-space:nowrap}
+.hero__sign{white-space:normal}
 .hero__sub{max-width:34em;text-wrap:balance}
 .foot__about{margin-bottom:6px;color:var(--ink)}
 
