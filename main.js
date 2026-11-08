@@ -229,6 +229,7 @@
       gsap.from(card, { y: 80, opacity: 0, rotateX: -10, transformPerspective: 1200, duration: 1.2, delay: [...track.children].indexOf(card) * 0.1, ease: 'expo.out', scrollTrigger: { trigger: track, start: 'top 85%' } });
     });
     const counters = Array.from(track.querySelectorAll('.count')).map(el => ({ el, to: +el.dataset.to, done: false, card: el.closest('.rcard') }));
+    counters.forEach(c => { c.el.textContent = '0'; });
     const tick = () => {
       let left = 0;
       counters.forEach(c => {
