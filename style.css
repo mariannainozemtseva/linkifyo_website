@@ -162,6 +162,18 @@ img{display:block}
 @media (max-width:1000px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.tiles{grid-template-columns:1fr}}
 
+/* FAQ */
+.faq{padding-block:var(--gap);padding-inline:var(--pad)}
+.faq__list{margin-top:clamp(32px,4vw,52px);max-width:900px;border-top:1px solid rgba(0,0,0,.14)}
+.faq__item{border-bottom:1px solid rgba(0,0,0,.14)}
+.faq__item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding-block:22px;font-size:var(--t3);font-weight:700;letter-spacing:-.01em;line-height:1.3}
+.faq__item summary::-webkit-details-marker{display:none}
+.faq__item summary::after{content:"+";flex:none;font-weight:400;font-size:1.3em;line-height:1;transition:transform .3s}
+.faq__item[open] summary::after{transform:rotate(45deg)}
+.faq__item summary:hover{color:#5a2bc4}
+.faq__item summary:focus-visible{outline:2px solid #5a2bc4;outline-offset:4px}
+.faq__item p{font-size:var(--t4);line-height:1.55;max-width:44em;padding-bottom:24px;color:var(--mute)}
+
 /* Publications */
 .press{padding-block:var(--gap);padding-inline:var(--pad);background:var(--cream)}
 .press__list{list-style:none;margin-top:32px;display:grid;gap:4px}
