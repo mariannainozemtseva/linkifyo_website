@@ -57,9 +57,7 @@
   });
 
   function staticMode() {
-    document.body.classList.remove('is-loading');
     document.documentElement.classList.add('is-static');
-    const l = document.querySelector('.loader'); if (l) l.remove();
     document.querySelectorAll('.count').forEach(c => c.textContent = c.dataset.to);
   }
   /* Phones get a static page: animation libraries are not even run */
@@ -82,7 +80,6 @@
   let lenis = null;
   if (typeof window.Lenis !== 'undefined') {
     lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
-    lenis.stop();
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(t => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);
@@ -94,26 +91,6 @@
       lenis.scrollTo(target, { duration: 1.6, offset: id === '#top' ? 0 : -40 });
     }));
   }
-
-  /* ---------- Preloader → hero intro ---------- */
-  gsap.set('.hero__title .word > i', { yPercent: 115 });
-  gsap.set('.reveal-up', { y: 30, opacity: 0 });
-  gsap.set('.loader__name span', { yPercent: 0 });
-
-  const counter = { v: 0 };
-  const num = document.getElementById('loaderNum');
-  const intro = gsap.timeline({ defaults: { ease: 'expo.inOut' } });
-  intro
-    .from('.loader__name span', { yPercent: 110, duration: 1.1, stagger: 0.12, ease: 'expo.out' }, 0)
-    .to(counter, { v: 100, duration: 1.8, ease: 'power2.inOut', onUpdate: () => num.textContent = Math.round(counter.v) }, 0)
-    .to('.loader__bar i', { width: '100%', duration: 1.8, ease: 'power2.inOut' }, 0)
-    .to('.loader__name span', { yPercent: -110, duration: 0.8, stagger: 0.06, ease: 'expo.in' }, 1.9)
-    .to('.loader', { clipPath: 'inset(0 0 100% 0)', duration: 1.1 }, 2.4)
-    .add(() => { document.body.classList.remove('is-loading'); lenis && lenis.start(); }, 2.9)
-    .to('.hero__title .word > i', { yPercent: 0, duration: 1.3, stagger: 0.045, ease: 'expo.out' }, 2.75)
-    .to('.reveal-up', { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: 'expo.out' }, 3.2)
-    .add(() => document.querySelector('.loader').remove());
-  gsap.set('.loader', { clipPath: 'inset(0 0 0% 0)' });
 
   /* ---------- Hero parallax out ---------- */
   gsap.to('.hero__inner', {

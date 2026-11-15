@@ -26,7 +26,6 @@ html{-webkit-font-smoothing:antialiased}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 body{background:var(--bg);color:var(--ink);font-family:var(--font);font-weight:400;font-size:var(--t4);line-height:1.5;overflow-x:hidden}
-body.is-loading{overflow:hidden}
 a{color:inherit}
 img{display:block}
 ::selection{background:var(--yellow);color:var(--ink)}
@@ -36,13 +35,6 @@ img{display:block}
 .word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
 .word>i{display:inline-block;font-style:normal;will-change:transform}
 
-/* Loader */
-.loader{position:fixed;inset:0;z-index:100;background:var(--yellow);display:flex;flex-direction:column;justify-content:space-between;padding:var(--pad)}
-.loader__count{font-size:var(--t5);font-weight:700;align-self:flex-end;font-variant-numeric:tabular-nums}
-.loader__name{display:flex;flex-direction:column;font-size:var(--t1);line-height:.92;letter-spacing:-.04em;font-weight:700}
-.loader__name span{display:block;overflow:hidden}
-.loader__bar{height:4px;background:rgba(0,0,0,.12);margin-top:24px;border-radius:4px;overflow:hidden}
-.loader__bar i{display:block;height:100%;width:0;background:var(--ink)}
 
 .grain{position:fixed;inset:-50%;z-index:80;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1s steps(6) infinite}
 @keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-5%,3%)}40%{transform:translate(4%,-6%)}60%{transform:translate(-3%,5%)}80%{transform:translate(6%,2%)}100%{transform:translate(0,0)}}
@@ -281,7 +273,7 @@ a.press__t:hover{background:var(--yellow)}
 
 /* phones: static page, no motion, no heavy blur */
 @media (max-width:760px){
-  .loader,.grain{display:none!important}
+  .grain{display:none!important}
   .glass i{backdrop-filter:none;-webkit-backdrop-filter:none;background:linear-gradient(90deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,0) 40%,rgba(40,0,90,.10) 85%,rgba(255,255,255,.10) 100%)}
   .glass{inset:0}
   .sun i{--r2:420px;left:80%;top:72%}
