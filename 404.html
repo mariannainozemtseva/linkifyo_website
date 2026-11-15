@@ -7,13 +7,13 @@
 <title>Page not found | Marianna Inozemtseva · Linkifyo Agency</title>
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/roboto-latin-wght400-700.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:"Roboto";font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/roboto-latin-wght400-700.woff2) format("woff2")}
+@font-face{font-family:"Roboto Fallback";src:local("Arial");size-adjust:100.3%;ascent-override:92.77%;descent-override:24.41%;line-gap-override:0%}
 :root{--ink:#000}
 *{box-sizing:border-box;margin:0}
-body{min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:24px;padding:24px clamp(16px,4vw,56px);font-family:Roboto,system-ui,sans-serif;color:#fff;background:radial-gradient(110% 90% at 85% 10%,#8d5ae0 0%,rgba(141,90,224,0) 55%),linear-gradient(160deg,#5a2bc4 0%,#6e36cf 45%,#4b1fae 100%)}
+body{min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:24px;padding:24px clamp(16px,4vw,56px);font-family:Roboto,"Roboto Fallback",system-ui,sans-serif;color:#fff;background:radial-gradient(110% 90% at 85% 10%,#8d5ae0 0%,rgba(141,90,224,0) 55%),linear-gradient(160deg,#5a2bc4 0%,#6e36cf 45%,#4b1fae 100%)}
 h1{font-size:clamp(42px,6.8vw,108px);line-height:.95;letter-spacing:-.04em;font-weight:700}
 p{font-size:20px;max-width:30em}
 a{display:inline-flex;align-items:center;height:54px;padding:0 26px;border-radius:99px;background:#ffc917;color:#000;font-weight:700;text-decoration:none;width:max-content}

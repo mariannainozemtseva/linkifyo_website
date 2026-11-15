@@ -1,3 +1,7 @@
+/* Roboto, self-hosted: one variable file (weights 400–700, Latin) instead of Google Fonts */
+@font-face{font-family:"Roboto";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/roboto-latin-wght400-700.woff2) format("woff2")}
+/* Arial tuned to Roboto's metrics, shown only until Roboto arrives: keeps line breaks and layout from jumping */
+@font-face{font-family:"Roboto Fallback";src:local("Arial");size-adjust:100.3%;ascent-override:92.77%;descent-override:24.41%;line-gap-override:0%}
 :root{
   /* brand: Marianna Inozemtseva guidebook */
   --yellow:#ffc917;
@@ -7,7 +11,7 @@
   --ink:#000000;
   --bg:#ffffff;
   --mute:#5f5a52;
-  --font:"Roboto",system-ui,-apple-system,sans-serif;
+  --font:"Roboto","Roboto Fallback",system-ui,-apple-system,sans-serif;
   /* five type sizes, two weights */
   --t1:clamp(42px,6.8vw,108px);
   --t2:clamp(32px,4.2vw,60px);
